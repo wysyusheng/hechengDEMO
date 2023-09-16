@@ -19,6 +19,23 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> itemSprite;
 
+    [SerializeField]
+    public List<SlotItem> invList = new List<SlotItem>()
+    {
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+        new SlotItem(),
+    };
+
     private void Awake()
     {
         instance = this;

@@ -47,7 +47,7 @@ public class itemOnDie : FsmStateAction
         var res = Owner.GetComponent<BreakableParent>().res;
         resMax = res.Count;
 
-        for(int i = 0; i <= resCount; i++)
+        for(int i = 0; i < resCount; i++)
         {
             //当前物品种类
             var resID = UnityEngine.Random.Range(0, resMax);
@@ -74,9 +74,7 @@ public class itemOnDie : FsmStateAction
 
             //设置物品
             newObject.GetComponent<SpriteRenderer>().sprite = GameManager.instance.itemSprite[(int)resCurrent];
+            newObject.GetComponent<Item>().type = resCurrent;
         }
-
-      
-
     }
 }

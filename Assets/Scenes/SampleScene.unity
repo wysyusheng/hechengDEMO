@@ -161,6 +161,31 @@ MonoBehaviour:
   - {fileID: -1879162328, guid: 1576af543b72645c9918d71a91895876, type: 3}
   - {fileID: 2133245014, guid: 1576af543b72645c9918d71a91895876, type: 3}
   - {fileID: 66011767, guid: cea528c8459e84dd287d4b2020f7e440, type: 3}
+  invList:
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
 --- !u!4 &174771908
 Transform:
   m_ObjectHideFlags: 0
