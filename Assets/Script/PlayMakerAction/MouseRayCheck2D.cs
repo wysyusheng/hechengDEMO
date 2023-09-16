@@ -24,9 +24,7 @@ public class MouseRayCheck2D : FsmStateAction
             {
                 return false;
             }
-
         }
-
         );
         hit.Value = result; 
         Finish();
@@ -38,7 +36,7 @@ public class MouseRayCheck2D : FsmStateAction
     public static bool Check(Func<RaycastHit2D, bool> condition)
     {
         //清空数组
-        Array.Clear(mResult ,index:0, mResult.Length);
+        Array.Clear(mResult ,0, mResult.Length);
 
         //获取鼠标坐标
         var mouseScreenPosition = Input.mousePosition;

@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
         APPLE,
         PLUM,
         WOOD,
-
         IRON,
         GOLD,
         RED_GEM

@@ -61,7 +61,7 @@ public class itemOnDie : FsmStateAction
             if (playerX - itemPosition.x >= 0)
             {
                 x = itemPosition.x + UnityEngine.Random.Range(-1f, 0f);
-                y = itemPosition.y = UnityEngine.Random.Range(-1f, 1f);
+                y = itemPosition.y + UnityEngine.Random.Range(-1f, 1f);
             }
             else
             {

@@ -319,6 +319,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.PlaySound
         - HutongGames.PlayMaker.Actions.FloatSubtract
         - HutongGames.PlayMaker.Actions.MathExpression
         - HutongGames.PlayMaker.Actions.SetScale
@@ -330,13 +331,22 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0100000000
-        actionStartIndex: 0000000004000000080000000f00000014000000
-        actionHashCodes: 2a6e8a009f646302afff1105b2cf10001bcdca04
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010100000000
+        actionStartIndex: 0000000004000000080000000c0000001300000018000000
+        actionHashCodes: 9cdc39052a6e8a009f646302afff1105b2cf10001bcdca04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: audioPlayPos
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 0
@@ -366,11 +376,24 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1/maxHp*hp
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.AudioClip
+          value: {fileID: 8300000, guid: 11109ef0e493140b58882058d99ad34e, type: 3}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         - useVariable: 1
           name: hp
           tooltip: 
@@ -453,6 +476,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -465,8 +494,12 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f0000000100000001000000120000000f0000001000000001000000140000001c0000000f0000000f0000000f000000010000000100000014000000110000001100000001000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 140000001c000000180000000f0000000f0000000f0000000100000001000000120000000f0000001000000001000000140000001c0000000f0000000f0000000f000000010000000100000014000000110000001100000001000000010000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
+        - gameObject
+        - position
+        - clip
+        - volume
         - floatVariable
         - subtract
         - everyFrame
@@ -494,8 +527,8 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000100000000000000010000000000000002000000000000000200000000000000000000000300000004000000050000000300000004000000010000000000000001000000050000000600000006000000070000000800000000000000010000000200000007000000
-        paramByteDataSize: 000000000000000001000000010000000000000000000000000000000100000000000000000000000000000000000000000000000100000001000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000200000000000000010000000000000003000000000000000200000001000000010000000400000005000000060000000300000004000000020000000000000001000000050000000600000007000000080000000900000000000000010000000200000007000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000010000000000000000000000000000000100000000000000000000000000000000000000000000000100000001000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000001000000
     - name: "\u9500\u6BC1"
       description: 
       colorIndex: 0
