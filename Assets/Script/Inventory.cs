@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory
 {
-    public static void AddInventory(GameManager.ITEM type,int count)
+    public static bool AddInventory(GameManager.ITEM type,int count)
     {
         var list = GameManager.instance.invList;
         var listSize = list.Count;
@@ -13,10 +13,10 @@ public class Inventory
         for(int i=0; i < listSize;i++)
         {
             var item = list[i];
-            if(item.Type == type && item.Count !=0)
+            if(item.Type == type && item.Count !=0 && item.Count<SlotItem.Limit)
             {
                 item.Count += 1;
-                return;
+                return true;
             }
         }
 
@@ -28,8 +28,11 @@ public class Inventory
             {
                 item.Type = type;
                 item.Count = count;
-                return;
+                return true;
             }
         }
+
+        //±³°üÂúÁË
+        return false;
     }
 }

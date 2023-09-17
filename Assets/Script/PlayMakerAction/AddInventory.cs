@@ -9,12 +9,13 @@ public class AddInventory : FsmStateAction
     [ObjectType(typeof(GameManager.ITEM))]
     public FsmEnum type;
     public int count;
+    public FsmBool collected;
 
     public override void OnEnter()
     {
         base.OnEnter();
 
-        Inventory.AddInventory((GameManager.ITEM)type.Value, count);
+        collected.Value=Inventory.AddInventory((GameManager.ITEM)type.Value, count);
 
         Finish();
     }
