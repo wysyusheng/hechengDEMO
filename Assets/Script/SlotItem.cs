@@ -10,4 +10,11 @@ public class SlotItem
     public int Count;
     public const int Limit = 3;
 
+    public SlotItem(GameManager.ITEM type,int count)
+    {
+        Type = type;
+        Count = count;
+    }
+
+    public SlotItem() { }
 }
