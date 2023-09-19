@@ -9,6 +9,7 @@ public class SlotItem
     public GameManager.ITEM Type;
     public int Count;
     public const int Limit = 3;
+    public Action OnChanged = () => { };
 
     public SlotItem(GameManager.ITEM type,int count)
     {
@@ -17,4 +18,10 @@ public class SlotItem
     }
 
     public SlotItem() { }
+
+    public void TriggerOnChanged()
+    {
+        OnChanged?.Invoke();//调用方法
+
+    }
 }

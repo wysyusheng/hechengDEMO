@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject InventoryMenu;
     public GameObject BtnInventory;
     public GameObject BtnCraft;
+    public GameObject BreakbleItem;
 
    public enum ITEM
     {

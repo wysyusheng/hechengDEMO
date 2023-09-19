@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1648588479097330456}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -107,7 +107,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1648588479097330456}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -266,6 +266,7 @@ RectTransform:
   m_Children:
   - {fileID: 3592282250233256687}
   - {fileID: 2954383628144567665}
+  - {fileID: 2885276135162285317}
   - {fileID: 8191958769873536483}
   - {fileID: 6216398482722883457}
   - {fileID: 2007067201532666358}
@@ -357,17 +358,17 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000005000000
-        actionHashCodes: 5ac8520427fbe103b2cf1000
+        actionIsOpen: 000000
+        actionStartIndex: 000000000300000005000000
+        actionHashCodes: 27fbe1035ac85204b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -499,7 +500,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: 
+            enumName: HutongGames.PlayMaker.None
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -508,7 +509,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: 
+            objectTypeName: UnityEngine.Object
             floatValues: []
             intValues: 
             boolValues: 
@@ -560,20 +561,20 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 24000000010000001100000011000000010000001400000011000000110000000100000001000000
+        paramDataType: 11000000110000000100000024000000010000001400000011000000110000000100000001000000
         paramName:
-        - targetProperty
-        - everyFrame
         - boolVariable
         - boolValue
+        - everyFrame
+        - targetProperty
         - everyFrame
         - gameObject
         - activate
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 00000000000000000000000001000000010000000000000002000000030000000200000003000000
-        paramByteDataSize: 00000000010000000000000000000000010000000000000000000000000000000100000001000000
+        paramDataPos: 00000000010000000000000000000000010000000000000002000000030000000200000003000000
+        paramByteDataSize: 00000000000000000100000000000000010000000000000000000000000000000100000001000000
     - name: "\u9009\u4E2D"
       description: 
       colorIndex: 0
@@ -598,8 +599,8 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - HutongGames.PlayMaker.Actions.GetMouseX
         - HutongGames.PlayMaker.Actions.GetMouseY
@@ -617,8 +618,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101010101010101
         actionIsOpen: 0000000000000000
-        actionStartIndex: 0000000002000000050000000a0000000d000000100000001400000018000000
-        actionHashCodes: 5ac8520427fbe103b2cf1000c320e405c320e4052a6e8a002a6e8a000cf26a00
+        actionStartIndex: 0000000003000000050000000a0000000d000000100000001400000018000000
+        actionHashCodes: 27fbe1035ac85204b2cf1000c320e405c320e4052a6e8a002a6e8a000cf26a00
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -803,9 +804,9 @@ MonoBehaviour:
         - useVariable: 1
           name: removeX
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
-          value: 260
+          value: 50
         - useVariable: 1
           name: mouseY
           tooltip: 
@@ -815,9 +816,9 @@ MonoBehaviour:
         - useVariable: 1
           name: removeY
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
-          value: -50
+          value: -20
         - useVariable: 1
           name: mouseX
           tooltip: 
@@ -873,12 +874,12 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 240000000100000011000000110000000100000014000000110000001100000001000000010000000f00000001000000010000000f00000001000000010000000f0000000f00000001000000010000000f0000000f000000010000000100000014000000250000000f0000000f000000070000000100000001000000
+        paramDataType: 110000001100000001000000240000000100000014000000110000001100000001000000010000000f00000001000000010000000f00000001000000010000000f0000000f00000001000000010000000f0000000f000000010000000100000014000000250000000f0000000f000000070000000100000001000000
         paramName:
-        - targetProperty
-        - everyFrame
         - boolVariable
         - boolValue
+        - everyFrame
+        - targetProperty
         - everyFrame
         - gameObject
         - activate
@@ -906,8 +907,8 @@ MonoBehaviour:
         - space
         - everyFrame
         - lateUpdate
-        paramDataPos: 000000000000000000000000010000000100000000000000020000000300000002000000030000000000000004000000050000000100000006000000070000000200000003000000080000000900000004000000050000000a0000000b000000010000000000000006000000070000000c0000001000000011000000
-        paramByteDataSize: 00000000010000000000000000000000010000000000000000000000000000000100000001000000000000000100000001000000000000000100000001000000000000000000000001000000010000000000000000000000010000000100000000000000000000000000000000000000040000000100000001000000
+        paramDataPos: 000000000100000000000000000000000100000000000000020000000300000002000000030000000000000004000000050000000100000006000000070000000200000003000000080000000900000004000000050000000a0000000b000000010000000000000006000000070000000c0000001000000011000000
+        paramByteDataSize: 00000000000000000100000000000000010000000000000000000000000000000100000001000000000000000100000001000000000000000100000001000000000000000000000001000000010000000000000000000000010000000100000000000000000000000000000000000000040000000100000001000000
     events:
     - name: UI POINTER ENTER
       isSystemEvent: 1
@@ -1027,6 +1028,83 @@ MonoBehaviour:
   type: 0
   recipeItem: {fileID: 7146292497647948313, guid: c226d5664844808438830c2b1aac7379, type: 3}
   uiRecipe: {fileID: 7284868434577111947}
+  uiCrafting: {fileID: 5704609624897975401}
+--- !u!1 &5704609624897975401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2885276135162285317}
+  - component: {fileID: 3616526150803370828}
+  - component: {fileID: 542572917965329505}
+  m_Layer: 5
+  m_Name: Crafting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2885276135162285317
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704609624897975401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648588479097330456}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 700, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &3616526150803370828
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704609624897975401}
+  m_CullTransparentMesh: 1
+--- !u!114 &542572917965329505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704609624897975401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7284868434577111947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,7 +1137,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1648588479097330456}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}

@@ -158,6 +158,7 @@ MonoBehaviour:
   InventoryMenu: {fileID: 2082330533}
   BtnInventory: {fileID: 8651489043568359371, guid: 1e2238bdb8e6d9d46bf4b94f940b8aa3, type: 3}
   BtnCraft: {fileID: 4463406412941500489, guid: d25f98a728570834395887d85995a12a, type: 3}
+  BreakbleItem: {fileID: 1150129748}
   itemSprite:
   - {fileID: -429112115, guid: a03f79dd0070349068e5977e978b7cfb, type: 3}
   - {fileID: 1303653568, guid: a03f79dd0070349068e5977e978b7cfb, type: 3}
@@ -29021,7 +29022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2082330534
 MonoBehaviour:
   m_ObjectHideFlags: 0
