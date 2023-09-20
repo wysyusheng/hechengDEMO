@@ -22,6 +22,7 @@ public class HP : MonoBehaviour
         }
 
         //ÏÔÊ¾ÑªÁ¿
+        if (!player) return;
         var hp = player.GetComponent<Player>().hp;
         for(int i=0;i<hp;i++)
         {

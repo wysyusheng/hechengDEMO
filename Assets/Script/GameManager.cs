@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -93,6 +94,17 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         InventoryMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(player)
+        {
+            if(player.GetComponent<Player>().hp<=0)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
     }
 
     public void ShowInventoryMenu()

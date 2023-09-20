@@ -6,4 +6,12 @@ public class Player : MonoBehaviour
 {
     public float hp = 3;
     public float maxHp = 3;
+
+    private void Update()
+    {
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
