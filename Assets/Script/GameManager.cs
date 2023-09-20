@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> itemSprite;
     public List<string> itemName;
+    public List<GameObject> itemPlaceable;
 
     public ArrayList craftingMenu = new ArrayList()
     {

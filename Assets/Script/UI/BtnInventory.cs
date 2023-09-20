@@ -1,8 +1,11 @@
 using HutongGames.PlayMaker;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class BtnInventory : MonoBehaviour
 {
@@ -48,6 +51,7 @@ public class BtnInventory : MonoBehaviour
     private void Update()
     {
         //移除物品
+        //按键输入
         var hover = GetComponent<PlayMakerFSM>().FsmVariables.GetVariable("hover") as FsmBool;
         var rightClick = Input.GetMouseButtonDown(1);
 
@@ -72,5 +76,52 @@ public class BtnInventory : MonoBehaviour
             Inventory.RemoveInventory(mItem);
         }
 
+        //使用物品
+        var LeftClick = Input.GetMouseButtonDown(0);
+        var playerS = GameManager.instance.player.GetComponent<Player>();
+        if ( hover.Value && LeftClick)
+        {
+            var used = false;
+            switch(mItem.Type)
+            {
+                case GameManager.ITEM.POIION:
+                    {
+                        if (playerS.hp < playerS.maxHp)
+                        {
+                            playerS.hp++;
+                            used = true;
+                            if (playerS.hp > playerS.maxHp) playerS.hp = playerS.maxHp;
+                        }
+                    };
+                    break;
+                case GameManager.ITEM.APPLE:
+                    {
+                        if (playerS.hp < playerS.maxHp)
+                        {
+                            playerS.hp+=0.5f;
+                            used = true;
+                            if (playerS.hp > playerS.maxHp) playerS.hp = playerS.maxHp;
+                        }
+                    };
+                    break;
+                default:
+                    if (GameManager.instance.itemPlaceable[(int)mItem.Type])
+                    {
+                        //给 GameManger Pause 状态机发送事件 PauseToggle
+                        GameManager.instance.GetComponent<PlayMakerFSM>().SendEvent("PauseToggle");
+                        playerS.placingItem = GameManager.instance.itemPlaceable[(int)mItem.Type];
+                        used = true;
+
+                    };
+                    break;
+            }
+
+            //用过了
+            if (used)
+            {
+                mItem.Count--;
+                mItem.TriggerOnChanged();
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float hp = 3;
     public float maxHp = 3;
+    public GameObject placingItem;
 
     private void Update()
     {
