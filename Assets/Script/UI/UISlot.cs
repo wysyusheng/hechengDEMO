@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UISlot : MonoBehaviour,IBeginDragHandler,IDeselectHandler,IEndDragHandler
+public class UISlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
     public Image icon;
     public Text text;
@@ -53,6 +53,9 @@ public class UISlot : MonoBehaviour,IBeginDragHandler,IDeselectHandler,IEndDragH
         if(!dragging)
         {
             dragging = true;
+
+            text.transform.SetParent(icon.transform);//数量位置跟随鼠标
+            icon.transform.SetParent(transform.parent.parent);//让图标显示在所有插槽上面
             SyncIconToMousePos();
         }
     }
@@ -61,14 +64,14 @@ public class UISlot : MonoBehaviour,IBeginDragHandler,IDeselectHandler,IEndDragH
     private void SyncIconToMousePos()
     {
         var mousePosition = Input.mousePosition;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(this.transform.parent as RectTransform, mousePosition, null, out var mouseWorldPoint))
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(this.transform.parent as RectTransform, mousePosition, null, out var mouseWorldPoint))
         {
             icon.transform.position = mouseWorldPoint;
         }
     }
 
     //拖拽中
-    public void OnDeselect(BaseEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
         if (dragging)
         {
@@ -79,6 +82,58 @@ public class UISlot : MonoBehaviour,IBeginDragHandler,IDeselectHandler,IEndDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        if (dragging)
+        {
+            dragging = false;
+            foreach (var targetSlot in slots)
+            {
+                //鼠标在插槽上
+                if (RectTransformUtility.RectangleContainsScreenPoint(targetSlot.transform as RectTransform, Input.mousePosition))
+                {
+                    //鼠标所在插槽是当前插槽
+                    if (targetSlot == this)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        //同类型插槽数量增加
+                        if (targetSlot.slotItem.Type == this.slotItem.Type)
+                        {
+                            targetSlot.slotItem.Count += this.slotItem.Count;
+                            //数量不能超过单个插槽的限制数量
+                            if (targetSlot.slotItem.Count <= SlotItem.Limit)
+                            {
+                                this.slotItem.Count=0;
+                            }
+                            else
+                            {
+                                this.slotItem.Count = targetSlot.slotItem.Count - SlotItem.Limit;//多出来的放出来
+                                targetSlot.slotItem.Count = SlotItem.Limit;
+                            }
+                        }
+                        //非同类插槽，调换位置
+                        else
+                        {
+                            var count = targetSlot.slotItem.Count;
+                            var type = targetSlot.slotItem.Type;
+                            targetSlot.slotItem.Count = this.slotItem.Count;
+                            targetSlot.slotItem.Type = this.slotItem.Type;
+                            this.slotItem.Count = count;
+                            this.slotItem.Type = type;
+                        }
+                        targetSlot.UpdateView();
+                        this.UpdateView();
+
+                        break;
+                    }
+                }
+            }
+
+            //鼠标不在任何插槽上，放回原来插槽
+            icon.transform.SetParent(this.transform);
+            icon.transform.localPosition = Vector3.zero;
+            text.transform.SetParent(this.transform);
+        }
     }
 }

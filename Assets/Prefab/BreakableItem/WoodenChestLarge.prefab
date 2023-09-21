@@ -101,9 +101,9 @@ GameObject:
   - component: {fileID: 3785318525787694616}
   - component: {fileID: 3433305567233787973}
   - component: {fileID: 8830645041719013225}
-  - component: {fileID: 89526766446258676}
+  - component: {fileID: 3507229457658251035}
   m_Layer: 0
-  m_Name: WoodenChest
+  m_Name: WoodenChestLarge
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 1818557177
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c128c5777cc5d4b69964665cbc4710b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 242562b39177c4004b1c4c9865ca0f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,18 +190,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000027805567, y: 0.40642017}
+  m_Offset: {x: -0.00002783537, y: 0.40642017}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.875, y: 0.75}
+    oldSize: {x: 1.1875, y: 0.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62979156, y: 0.5711049}
+  m_Size: {x: 0.94501054, y: 0.5711049}
   m_EdgeRadius: 0
 --- !u!114 &4195264172160524092
 MonoBehaviour:
@@ -754,13 +754,13 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 10
+        value: 12
       - useVariable: 1
         name: maxHp
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 10
+        value: 12
       - useVariable: 1
         name: bloodScale
         tooltip: 
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   res: 02000000
-  placeableResCount: 3
+  placeableResCount: 6
 --- !u!114 &145511172457739669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,7 +2417,23 @@ MonoBehaviour:
     Count: 0
   - Type: 0
     Count: 0
---- !u!114 &89526766446258676
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+  - Type: 0
+    Count: 0
+--- !u!114 &3507229457658251035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2524,7 +2540,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
