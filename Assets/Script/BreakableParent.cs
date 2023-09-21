@@ -5,4 +5,5 @@ using UnityEngine;
 public class BreakableParent : MonoBehaviour
 {
     public List<GameManager.ITEM> res;
+    public int placeableResCount = 0;
 }

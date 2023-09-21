@@ -57,6 +57,9 @@ public class BtnInventory : MonoBehaviour
 
         if (hover.Value && rightClick)
         {
+            //ÒôÐ§
+            UISounds.Get.UIClick.Play();
+
             //¶ªÆú
             var type = mItem.Type;
             var count = mItem.Count;
@@ -81,6 +84,9 @@ public class BtnInventory : MonoBehaviour
         var playerS = GameManager.instance.player.GetComponent<Player>();
         if ( hover.Value && LeftClick)
         {
+            //ÒôÐ§
+            UISounds.Get.UIClick.Play();
+
             var used = false;
             switch(mItem.Type)
             {

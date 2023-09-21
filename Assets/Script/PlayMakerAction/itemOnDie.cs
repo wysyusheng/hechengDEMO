@@ -43,6 +43,10 @@ public class itemOnDie : FsmStateAction
                 }
         }
 
+        //一共收获多少物品（可放置物）
+        var placeableResCount = Owner.GetComponent<BreakableParent>().placeableResCount;
+        if (placeableResCount != 0) resCount = placeableResCount;
+
         //最多可以收获多少种物品
         var res = Owner.GetComponent<BreakableParent>().res;
         resMax = res.Count;

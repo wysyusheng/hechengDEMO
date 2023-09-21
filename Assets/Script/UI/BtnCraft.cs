@@ -66,7 +66,8 @@ public class BtnCraft : MonoBehaviour
             if(canCraft)
             {
                 craftingAnimation = 0.02f;
-
+                //音效
+                UISounds.Get.Crafting.Play();
             }
         }
 
@@ -77,6 +78,8 @@ public class BtnCraft : MonoBehaviour
             //完成
             if (craftingAnimation >= 1)
             {
+                //音效
+                UISounds.Get.CraftingSuccess.Play();
                 craftingAnimation = 0;
                 CraftNewInventory();
                 GameManager.instance.ShowInventoryMenu();
@@ -85,6 +88,12 @@ public class BtnCraft : MonoBehaviour
 
         else
         {
+            //音效停止
+            if(held && craftingAnimation>0)
+            {
+                UISounds.Get.Crafting.Stop();
+            }
+
             craftingAnimation = 0;
         }
 

@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
         POIION,
         SYRUP,
         BLOCK_WOOD,
-        BLOCK_IRON
+        BLOCK_IRON,
+        RED_RING
     }
 
     public List<Sprite> itemSprite;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         "НЈдь",
         ITEM.BLOCK_WOOD,
         ITEM.BLOCK_IRON,
+        ITEM.RED_RING,
     };
 
     public List<List<SlotItem>> itemRecipe = new List<List<SlotItem>>()
@@ -71,6 +73,11 @@ public class GameManager : MonoBehaviour
         new()
         {
             new SlotItem(ITEM.IRON,4)
+        },
+        new()
+        {
+            new SlotItem(ITEM.GOLD,2),
+            new SlotItem(ITEM.RED_GEM,1)
         }
     };
 
