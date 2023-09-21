@@ -47,6 +47,12 @@ MonoBehaviour:
       showInInspector: 0
       networkSync: 0
       value: {fileID: 0}
+    - useVariable: 1
+      name: iconE
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
     objectVariables: []
     materialVariables: []
     textureVariables: []
@@ -54,10 +60,11 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000
+    variableCategoryIDs: 0000000000000000000000000000000000000000
   events:
   - "\u4E3B\u89D2/\u780D\u4F10"
   - "\u4E3B\u89D2/\u53D7\u4F24"
   - "\u4E3B\u89D2/\u653E\u7F6E\u5B8C\u6210"
   - "\u4E3B\u89D2/\u653E\u7F6E"
   - Juice/AppiyScaling
+  - CheatPauseToggle

@@ -80,6 +80,7 @@ public class BtnCraft : MonoBehaviour
             {
                 //“Ù–ß
                 UISounds.Get.CraftingSuccess.Play();
+
                 craftingAnimation = 0;
                 CraftNewInventory();
                 GameManager.instance.ShowInventoryMenu();

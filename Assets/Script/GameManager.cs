@@ -1,3 +1,4 @@
+using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using System;
 using System.Collections;
@@ -5,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class GameManager : MonoBehaviour
     public GameObject BtnInventory;
     public GameObject BtnCraft;
     public GameObject BreakbleItem;
+    public GameObject ChestMenu;
+    public GameObject ButtonMovable;
 
    public enum ITEM
     {
@@ -29,7 +33,9 @@ public class GameManager : MonoBehaviour
         SYRUP,
         BLOCK_WOOD,
         BLOCK_IRON,
-        RED_RING
+        RED_RING,
+
+        WOODEN_CHEST
     }
 
     public List<Sprite> itemSprite;
@@ -47,6 +53,9 @@ public class GameManager : MonoBehaviour
         ITEM.BLOCK_WOOD,
         ITEM.BLOCK_IRON,
         ITEM.RED_RING,
+
+        "宝箱",
+        ITEM.WOODEN_CHEST,
     };
 
     public List<List<SlotItem>> itemRecipe = new List<List<SlotItem>>()
@@ -78,6 +87,10 @@ public class GameManager : MonoBehaviour
         {
             new SlotItem(ITEM.GOLD,2),
             new SlotItem(ITEM.RED_GEM,1)
+        },
+        new()
+        {
+            new SlotItem(ITEM.WOOD,3)
         }
     };
 
@@ -102,6 +115,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         InventoryMenu.SetActive(false);
+        ChestMenu.SetActive(false);
     }
 
     private void Update()
@@ -175,5 +189,55 @@ public class GameManager : MonoBehaviour
                 newButton.GetComponent<BtnCraft>().type = (ITEM)arr;
             }
         }
+    }
+
+    public void ShowChestMenu()
+    {
+        ChestMenu.SetActive(true);
+
+        //背包
+        var invMovable = ChestMenu.transform.Find("InvMovable");
+
+        //清空克隆体
+        var invButtonCount = invMovable.childCount;
+        for(int i=invButtonCount-1;i>=0;i--)
+        {
+            var child = invMovable.GetChild(i);
+            Destroy(child.gameObject);
+        }
+
+        //生成插槽
+        for (int i = 0; i < invList.Count; i++)
+        {
+            var newObject = Object.Instantiate(ButtonMovable, invMovable);
+            var item = invList[i];
+            var uiSlot = newObject.GetComponent<UISlot>();
+            uiSlot.slotItem = item;
+            uiSlot.UpdateView();
+        }
+
+        //宝箱
+        var chestMovable = ChestMenu.transform.Find("ChestMovable");
+        var chest = GetComponent<PlayMakerFSM>().FsmVariables.GetVariable("chest") as FsmGameObject;
+        var chestList = chest.Value.transform.GetComponent<ChestParent>().chestList;
+
+        //清空克隆体
+        var chestButtonCount = chestMovable.childCount;
+        for (int i = chestButtonCount - 1; i >= 0; i--)
+        {
+            var child = chestMovable.GetChild(i);
+            Destroy(child.gameObject);
+        }
+
+        //生成插槽
+        for (int i = 0; i < chestList.Count; i++)
+        {
+            var newObject = Object.Instantiate(ButtonMovable, chestMovable);
+            var item = chestList[i];
+            var uiSlot = newObject.GetComponent<UISlot>();
+            uiSlot.slotItem = item;
+            uiSlot.UpdateView();
+        }
+
     }
 }

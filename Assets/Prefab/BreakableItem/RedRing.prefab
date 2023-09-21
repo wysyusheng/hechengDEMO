@@ -752,13 +752,13 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 4
+        value: 8
       - useVariable: 1
         name: maxHp
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 4
+        value: 8
       - useVariable: 1
         name: bloodScale
         tooltip: 
